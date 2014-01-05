@@ -16,8 +16,10 @@ static const int NUM_LAST = 3;
   SharpIRProximitySensor(int pin) {
     _pin = pin;
     _curr = 0;
-    memset(_hist, 0, NUM_LAST*sizeof(int));
+    clear();
   }
+
+  void clear(void);
 
   int read(void) ;
 };
