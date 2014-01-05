@@ -2,6 +2,10 @@
 #include <Arduino.h>
 
 
+void SharpIRProximitySensor::clear(void) {
+    memset(_hist, 0, NUM_LAST*sizeof(int));
+}
+
 
 int SharpIRProximitySensor::read() {
   float volts = analogRead(_pin)*0.0048828125;   // value from sensor * (5/1024) - if running 3.3.volts then change 5 to 3.3
